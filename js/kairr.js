@@ -4,7 +4,9 @@ window.addEventListener('scroll', function () {
   nav.classList.toggle('sticky', window.scrollY > 50);
 });
 
-// Hamburger Toggle
-document.getElementById('menu-toggle').addEventListener('click', function () {
-  document.getElementById('nav-dropdown').classList.toggle('active');
-});
+ const menuToggle = document.getElementById('menu-toggle');
+    const navDropdown = document.getElementById('nav-dropdown');
+
+    menuToggle.addEventListener('click', () => {
+      navDropdown.classList.toggle('active');
+    });

@@ -44,45 +44,39 @@
 </head>
 
 <body>
+<div class="nav-container" id="main-nav-bar">
+    <div class="nav-left desktop-only">
+      <a href="#">HOME</a>
+      <a href="#">DISCOVER</a>
+    </div>
 
-    <!-- Navbar starts -->
-<!-- Navbar -->
-<!-- Navbar -->
-<nav id="main-nav-bar">
-  <div class="nav-left">
+    <div class="logo-sticky">
+      <img src="./kairr/whitetrans.png" alt="Logo"/>
+    </div>
+
+    <div class="nav-right desktop-only">
+      <a href="#">LOGIN</a>
+      <a href="#">SIGN UP</a>
+    </div>
+
+    <button class="nav-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Hamburger Dropdown -->
+  <div class="nav-dropdown" id="nav-dropdown">
     <a href="#">HOME</a>
     <a href="#">DISCOVER</a>
-  </div>
-
-  <div class="logo-sticky">
-    <img src="./kairr/whitetrans.png" alt="Kairr Logo" />
-  </div>
-
-  <div class="nav-right">
     <a href="#">LOGIN</a>
     <a href="#">SIGN UP</a>
   </div>
+<!-- Navbar ends -->
 
-  <button class="nav-toggle" id="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</nav>
-
-<!-- Hamburger Dropdown (Mobile) -->
-<div class="nav-dropdown" id="nav-dropdown">
-  <div class="nav-left">
-    <a href="#">HOME</a>
-    <a href="#">DISCOVER</a>
-  </div>
-  <div class="nav-right">
-    <a href="#">LOGIN</a>
-    <a href="#">SIGN UP</a>
-  </div>
-</div>
   <!-- Carousel -->
- <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
+ <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2500">
   <div class="carousel-inner">
 
     <div class="carousel-item active carousel-slide" style="background-image: url('./kairr/Photos/kairrfront1.jpeg');">
@@ -649,8 +643,36 @@
 
 
     </script>
+
+</script>
+    <script>
+  const toggleBtn = document.getElementById("nav-toggle-btn");
+  const dropdown = document.getElementById("nav-dropdown");
+
+  toggleBtn.addEventListener("click", () => {
+    dropdown.classList.toggle("active");
+  });
+</script>
+
     <script src="js/main.js"></script>
      <script src="js/kairr.js"></script>
+         <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Sticky Navbar
+    const nav = document.getElementById('main-nav-bar');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('sticky', window.scrollY > 50);
+    });
+
+    // Hamburger Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navDropdown = document.getElementById('nav-dropdown');
+
+    menuToggle.addEventListener('click', function () {
+      navDropdown.classList.toggle('active');
+    });
+  });
+</script>
 </body>
 
 </html>
