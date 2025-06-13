@@ -2,64 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fixed Hamburger Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Navbar</title>
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: white;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    /* Navbar Container */
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 1.5rem;
-      background-color: #000;
-      position: fixed;
-      top: 0;
+      padding: 1rem 2rem;
+      position: absolute;
       width: 100%;
-      z-index: 999;
+      background: #000;
+      z-index: 1000;
     }
 
-    .nav-left, .nav-right {
+    .logo-sticky img {
+      height: 40px;
+    }
+
+    .nav-left,
+    .nav-right {
       display: flex;
       gap: 1rem;
     }
 
-    .nav-left a, .nav-right a {
+    .nav-left a,
+    .nav-right a {
       color: white;
       text-decoration: none;
+      font-weight: bold;
     }
 
+    .nav-left a:hover,
+    .nav-right a:hover {
+      color: #ccc;
+    }
+
+    /* Hamburger Icon */
     .nav-toggle {
       display: none;
       flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
       background: none;
       border: none;
+      cursor: pointer;
     }
 
     .nav-toggle span {
       width: 25px;
       height: 3px;
-      background-color: white;
+      background: white;
+      display: block;
     }
 
+    /* Hamburger Dropdown Menu */
     .nav-dropdown {
       display: none;
       flex-direction: column;
-      background-color: #111;
       position: absolute;
-      top: 70px;
+      top: 100%;
       left: 0;
       right: 0;
+      background: #000;
+      z-index: 999;
       padding: 1rem 2rem;
-      z-index: 1000;
     }
 
     .nav-dropdown.active {
@@ -67,11 +88,17 @@
     }
 
     .nav-dropdown a {
-      padding: 0.5rem 0;
       color: white;
       text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 0;
     }
 
+    .nav-dropdown a:hover {
+      color: #ccc;
+    }
+
+    /* Responsive Styles */
     @media (max-width: 768px) {
       .desktop-only {
         display: none;
@@ -81,16 +108,9 @@
         display: flex;
       }
     }
-
-    /* Dummy hero content */
-    .hero {
-      height: 100vh;
-      background: url('https://via.placeholder.com/800x400') center/cover no-repeat;
-    }
   </style>
 </head>
 <body>
-
   <div class="nav-container" id="main-nav-bar">
     <div class="nav-left desktop-only">
       <a href="#">HOME</a>
@@ -98,7 +118,7 @@
     </div>
 
     <div class="logo-sticky">
-      <img src="https://via.placeholder.com/100x40?text=KAIRR" alt="Logo"/>
+      <img src="https://via.placeholder.com/120x40?text=KAIRR" alt="Logo" />
     </div>
 
     <div class="nav-right desktop-only">
@@ -113,7 +133,7 @@
     </button>
   </div>
 
-  <!-- Hamburger Dropdown -->
+  <!-- Hamburger Dropdown (for mobile) -->
   <div class="nav-dropdown" id="nav-dropdown">
     <a href="#">HOME</a>
     <a href="#">DISCOVER</a>
@@ -121,17 +141,20 @@
     <a href="#">SIGN UP</a>
   </div>
 
-  <!-- Dummy hero -->
-  <div class="hero"></div>
-
   <script>
+    // Toggle mobile menu
     const menuToggle = document.getElementById('menu-toggle');
     const navDropdown = document.getElementById('nav-dropdown');
 
     menuToggle.addEventListener('click', () => {
       navDropdown.classList.toggle('active');
     });
-  </script>
 
+    // Sticky navbar (optional)
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('main-nav-bar');
+      nav.classList.toggle('sticky', window.scrollY > 50);
+    });
+  </script>
 </body>
 </html>

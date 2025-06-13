@@ -326,3 +326,82 @@ body {
         display: flex;
       }
     }
+
+    /* ------------------------------ */
+
+    /* about.css */
+
+/* Primary Section Styling */
+.about-section {
+  background-color: #000000;
+}
+
+/* Custom Red Theme */
+.about-content,
+
+.about-content h1,
+.about-content h5,
+.about-experience {
+  color: #c82020;
+}
+
+.about-content p,
+.about-content span{
+  color: #fff;
+}
+.section-title {
+  color: #c82020;
+  font-weight: bold;
+  font-size: 1.25rem;
+  background-color: #000000 !important;
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+/* Experience Box */
+.custom-bg {
+  background-color: #242121;
+  color: #c82020;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Button Style */
+.explore-btn {
+  background-color: #c82020;
+  border: none;
+  color: white;
+}
+
+.explore-btn:hover {
+  background-color: #a41515;
+  color: white;
+}
+
+
+/* Fix the section title */
+.section-title {
+  color: #c82020;
+  font-weight: 600;
+  font-size: 1.25rem;
+  background-color: transparent;
+  display: inline-block;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* .section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: 4px;
+  height: 100%;
+  background-color: #c82020;
+} */
+
+/* Make the main heading white */
+.about-content p {
+  color: white;
+}
