@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Milky - Dairy Website Template</title>
+    <title>KAIRR Hostel</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -47,74 +47,79 @@
 
     <!-- Navbar starts -->
 <!-- Navbar -->
-  <div class="nav-container" id="main-nav-bar">
-    <div class="nav-left desktop-only">
-      <a href="#">HOME</a>
-      <a href="#">DISCOVER</a>
-    </div>
-
-    <div class="logo-sticky">
-      <img src="./kairr/whitetrans.png" alt="Kairr Logo" />
-    </div>
-
-    <div class="nav-right desktop-only">
-      <a href="#">LOGIN</a>
-      <a href="#">SIGN UP</a>
-    </div>
-
-    <button class="nav-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<!-- Navbar -->
+<nav id="main-nav-bar">
+  <div class="nav-left">
+    <a href="#">HOME</a>
+    <a href="#">DISCOVER</a>
   </div>
 
-  <!-- Hamburger Dropdown (for mobile) -->
-  <div class="nav-dropdown" id="nav-dropdown">
-    <div class="nav-left">
-      <a href="#">HOME</a>
-      <a href="#">DISCOVER</a>
-    </div>
-    <div class="nav-right">
-      <a href="#">LOGIN</a>
-      <a href="#">SIGN UP</a>
-    </div>
+  <div class="logo-sticky">
+    <img src="./kairr/whitetrans.png" alt="Kairr Logo" />
   </div>
+
+  <div class="nav-right">
+    <a href="#">LOGIN</a>
+    <a href="#">SIGN UP</a>
+  </div>
+
+  <button class="nav-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- Hamburger Dropdown (Mobile) -->
+<div class="nav-dropdown" id="nav-dropdown">
+  <div class="nav-left">
+    <a href="#">HOME</a>
+    <a href="#">DISCOVER</a>
+  </div>
+  <div class="nav-right">
+    <a href="#">LOGIN</a>
+    <a href="#">SIGN UP</a>
+  </div>
+</div>
   <!-- Carousel -->
-  <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-    <div class="carousel-inner">
+ <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
+  <div class="carousel-inner">
 
-      <div class="carousel-item active carousel-slide" style="background-image: url('./kairr/kairrfront.jpeg');">
-        <div class="overlay"></div>
-        <div class="carousel-caption">
-          <h1>Welcome to KAIRR</h1>
-          <p>Your home away from home.</p>
+    <div class="carousel-item active carousel-slide" style="background-image: url('./kairr/Photos/kairrfront1.jpeg');">
+      <div class="overlay"></div>
+      <div class="carousel-caption">
+        <div class="animated-caption">
+          <h1>KAIRR Girls Hostel</h1>
+          <p>A safe, stylish, and secure space for student living.</p>
           <a href="#" class="btn btn-light text-dark">Learn More</a>
         </div>
       </div>
+    </div>
 
-      <div class="carousel-item carousel-slide" style="background-image: url('./kairr/kairrfront2.jpeg');">
-        <div class="overlay"></div>
-        <div class="carousel-caption">
-          <h1>Safe & Elegant</h1>
-          <p>Empowering girls through safe living spaces.</p>
+    <div class="carousel-item carousel-slide" style="background-image: url('./kairr/Photos/entry1.jpeg');">
+      <div class="overlay"></div>
+      <div class="carousel-caption">
+        <div class="animated-caption">
+          <h1>Modern Comfort, Everyday</h1>
+          <p>Designed for convenience, comfort, and peace of mind.</p>
           <a href="#" class="btn btn-light text-dark">Explore</a>
         </div>
       </div>
+    </div>
 
-      <div class="carousel-item carousel-slide" style="background-image: url('./kairr/kairrfront.jpeg');">
-        <div class="overlay"></div>
-        <div class="carousel-caption">
-          <h1>Join Our Family</h1>
-          <p>Where comfort meets community.</p>
-          <a href="#" class="btn btn-light text-dark">Apply Now</a>
+    <div class="carousel-item carousel-slide" style="background-image: url('./kairr/Photos/terracepic2.jpeg');">
+      <div class="overlay"></div>
+      <div class="carousel-caption">
+        <div class="animated-caption">
+          <h1>Feel Right at Home</h1>
+          <p>Be a part of a cozy, welcoming community.</p>
+          <a href="#" class="btn btn-light text-dark">Enquire Now</a>
         </div>
       </div>
-
     </div>
-  </div>
-<!-- Carousel End -->
 
+  </div>
+</div>
 
 
     <!-- About Start -->
@@ -630,8 +635,20 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/parallax/parallax.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script>
+                // Sticky Navbar
+        window.addEventListener('scroll', function () {
+        const nav = document.getElementById('main-nav-bar');
+        nav.classList.toggle('sticky', window.scrollY > 50);
+        });
 
-    <!-- Template Javascript -->
+        // Hamburger Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+        document.getElementById('nav-dropdown').classList.toggle('active');
+        });
+
+
+    </script>
     <script src="js/main.js"></script>
      <script src="js/kairr.js"></script>
 </body>
